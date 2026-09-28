@@ -2,26 +2,14 @@ html {
   scroll-behavior: smooth;
 }
 
-html.dark {
-  filter: invert(1) hue-rotate(180deg);
-}
-html.dark body::before {
-  filter: invert(1) hue-rotate(180deg);
-}
-
-html.dark .back-to-top,
-html.dark img,
-html.dark .upload-btn span,
-html.dark header,
-html.dark button,
-html html.dark .ad-badge,
-html.dark footer a,
-html.dark footer p,
-html.dark .no-invert {
-  filter: invert(1) hue-rotate(180deg) !important;
-}
-html.dark body::before {
+html.dark body {
   background-image: url(img/backgr-img4.webp);
+}
+html.dark .burger-btn {
+  background-color: none;
+  background: none;
+  border: none;
+  box-shadow: none !important;
 }
 html.dark #calculator-card {
   background-color: rgba(245, 250, 255, 0.4);
@@ -29,16 +17,12 @@ html.dark #calculator-card {
 html.dark .ad-geo {
   color: #718096;
 }
-html.dark .theme-toggle {
-  color: #a9adc1;
-}
-html.dark .theme-toggle:hover {
-  color: rgb(160, 72, 0);
-}
 html.dark .nav-mobile .theme-toggle:hover {
   color: rgb(255, 156, 57);
 }
-html.dark nav a:hover {
+html.dark nav a:hover,
+html.dark .theme-toggle:hover,
+html.dark .nav-mobile a:hover {
   color: rgb(255, 156, 57);
 }
 html.dark header {
@@ -48,13 +32,60 @@ html.dark header h1 {
   color: rgba(37, 47, 57, 0.9);
 }
 html.dark .back-to-top {
-  background-color: #626c8f;
+  background-color: #2b3145;
+}
+html.dark .card,
+html.dark #calculator-card {
+  background-color: #2b324050;
+}
+html.dark .ad-card {
+  background-color: #2b324070;
+}
+html.dark h2,
+html.dark h3,
+html.dark .bmi,
+html.dark label {
+  color: #b4c6d7;
+}
+html.dark main p,
+html.dark aside p,
+html.dark .category,
+html.dark .info,
+html.dark .nav-mobile a,
+html.dark .nav-mobile .theme-toggle {
+  color: #a0b0c0;
+}
+html.dark .value {
+  color: #4b8fce;
+}
+html.dark .hint,
+html.dark .hint-undo-redo,
+html.dark .text {
+  color: #8d9aa8;
+}
+html.dark #weightInput,
+html.dark #heightInput,
+html.dark #textInput {
+  border-color: #4b8fce;
+  color: white;
+}
+html.dark #weightInput::placeholder,
+html.dark #heightInput::placeholder,
+html.dark #textInput::placeholder {
+  color: #8d9aa8;
+}
+html.dark #textFontSelect,
+html.dark #fontFamilySelect {
+  color: #a0b0c0;
+  border-color: #4b8fce;
+}
+html.dark #textEditor {
+  border-color: #4b8fce;
 }
 html.dark .imt-button {
-  background-color: #c6d3e9;
-  color: rgb(230, 81, 27);
+  background-color: #2b3240;
+  color: rgb(241, 108, 60);
 }
-
 html.dark .imt-button:hover {
   opacity: 0.8;
   box-shadow: 1px 0px 5px rgba(255, 147, 39, 0.7);
@@ -64,6 +95,10 @@ html.dark button {
 }
 html.dark button:hover {
   box-shadow: 1px 0px 5px rgb(90, 137, 255);
+}
+html.dark footer,
+html.dark .nav-mobile {
+  background-color: #2b32409e;
 }
 html.dark footer,
 html.dark footer a {
@@ -84,23 +119,15 @@ body {
     "Open Sans",
     "Helvetica Neue",
     sans-serif;
+  background-image: url(img/backgr-img.webp);
+  background-size: contain;
   font-variant: small-caps;
   line-height: 1.4;
   font-size: 16px;
   margin: 0 auto;
   hyphens: auto;
 }
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  background-image: url(img/backgr-img.webp);
-  background-size: contain;
-}
+
 .page {
   max-width: 100%;
   width: calc(100%-40px);
@@ -802,6 +829,11 @@ footer {
   h3 {
     font-size: 18px;
   }
+  #weightInput::placeholder,
+  #heightInput::placeholder,
+  #textInput::placeholder {
+    font-size: 12px;
+  }
   .hint,
   .hint-undo-redo {
     font-size: 12px;
@@ -831,12 +863,6 @@ footer {
 }
 
 @media (max-width: 680px) {
-  html.dark .burger-btn {
-    background-color: none;
-    background: none;
-    border: none;
-    box-shadow: none !important;
-  }
   body,
   .ad-text {
     font-size: 12px;
@@ -920,7 +946,7 @@ footer {
     margin-top: 60px;
   }
   .imt-button {
-    width: 35%;
+    width: 40%;
   }
   h2 {
     font-size: 18px;
@@ -960,6 +986,11 @@ footer {
   .hint-undo-redo {
     font-size: 11px;
   }
+  #weightInput::placeholder,
+  #heightInput::placeholder,
+  #textInput::placeholder {
+    font-size: 11px;
+  }
   .img-controls .control {
     width: 30%;
   }
@@ -985,7 +1016,8 @@ footer {
     font-size: 11px;
   }
   header {
-    background-position-x: 0;
+    background-image: url(img/hero_img_dark_2.webp) !important;
+    background-position-x: -250px;
   }
   .header-content {
     margin-left: 20px;
@@ -1024,6 +1056,11 @@ footer {
   }
   #bmiImage {
     max-width: 100%;
+  }
+  #weightInput::placeholder,
+  #heightInput::placeholder,
+  #textInput::placeholder {
+    font-size: 10px;
   }
   .hint,
   .hint-undo-redo {
