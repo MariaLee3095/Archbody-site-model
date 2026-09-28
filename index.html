@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Архитектура тела</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="top"></div>
+    <div class="page">
+      <header class="hero">
+        <button class="burger-btn" id="burgerBtn">
+          <span></span>
+          <span></span>
+        </button>
+        <nav id="navMenu" class="nav-menu">
+          <a href="#advices-card">ЗОЖ-советы</a>
+          <a href="#text-card">Сделать записи</a>
+          <a href="#picture-card">Создать постер</a>
+          <a href="#advertisement-block">Приглашаем посетить</a>
+          <button class="theme-toggle">Переключить тему</button>
+        </nav>
+        <nav class="nav-mobile" id="navMobile">
+          <a href="#advices-card">ЗОЖ-советы</a>
+          <a href="#text-card">Сделать записи</a>
+          <a href="#picture-card">Создать постер</a>
+          <a href="#advertisement-block">Приглашаем посетить</a>
+          <button class="theme-toggle">Переключить тему</button>
+        </nav>
+        <div class="header-content">
+          <h1>Архитектура тела</h1>
+          <p>
+            Интерактивный ЗОЖ-сайт - проведите время с пользой для тела и ума.
+          </p>
+          <div class="imt-button">
+            <a href="#calculator-card">Рассчитать ИМТ</a>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <div class="cards-container">
+          <div id="advices-card" class="card">
+            <h2>ЗОЖ-советы</h2>
+            <img id="sliderImage" src="img/1.webp" alt="Первый слайд" />
+            <h3 class="caption" id="slideCaption">Соблюдайте режим дня</h3>
+            <p id="slideCounter" class="counter">
+              Правильный режим дня держится на стабильном времени подъема и
+              отказе от гаджетов за час до сна. Постарайтесь просыпаться в одно
+              и то же время даже в выходные — это настроит ваши внутренние
+              биологические часы, сделает засыпание легким, а утро —
+              по-настоящему бодрым.
+            </p>
+            <div class="buttons">
+              <button id="prevButton">Назад</button>
+              <button id="nextButton">Вперёд</button>
+            </div>
+            <div class="hint">
+              Нажимайте кнопки, чтобы переключать изображения.
+            </div>
+          </div>
+
+          <div id="text-card" class="card">
+            <h2>ЗОЖ-дневник</h2>
+            <p>Запишите свои цели, меню или план тренировок на сегодня.</p>
+            <div class="toolbar">
+              <select id="fontFamilySelect">
+                <option value="Arial">Arial</option>
+                <option value="Times">Times New Roman</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Garamond">Garamond</option>
+              </select>
+              <input type="color" id="textColor" />
+              <input type="color" id="backgroundColor" value="#ffffff" />
+              <button id="leftButton">По левому краю</button>
+              <button id="centerButton">По центру</button>
+              <button id="rightButton">По правому краю</button>
+
+              <button id="decreaseButton">Уменьшить шрифт</button>
+              <button id="increaseButton">Увеличить шрифт</button>
+
+              <button id="boldButton">Жирный стиль</button>
+
+              <button id="clearButton" class="clearButton">Очистить</button>
+            </div>
+            <div
+              id="textEditor"
+              contenteditable="true"
+              placeholder="Введите текст"
+            ></div>
+
+            <div class="info">
+              Размер шрифта: <span id="fontSizeValue" class="value">18px</span>
+            </div>
+            <button id="downloadButton">Скачать дневник</button>
+
+            <div id="messageText1" class="message"></div>
+          </div>
+
+          <div id="picture-card" class="card">
+            <h2>Создайте мотивирующий постер</h2>
+
+            <div id="posterPreviewContainer">
+              <img
+                src="img/photo.webp"
+                id="photoImage"
+                crossorigin="anonymous"
+              />
+
+              <div id="textOverlay"></div>
+            </div>
+
+            <div class="control upload-zone">
+              <label for="imageLoader" class="upload-btn">
+                <span>📁 </span>Загрузить своё фото
+              </label>
+              <input type="file" id="imageLoader" accept="image/*" />
+            </div>
+
+            <div class="control-pannel">
+              <div class="buttons-panel">
+                <button id="undoBtn" disabled>↩</button>
+                <button id="redoBtn" disabled>↪</button>
+              </div>
+
+              <div class="text-settings">
+                <h3>Добавить текст</h3>
+                <div class="control">
+                  <label for="textInput">Ваша надпись:</label>
+                  <input
+                    type="text"
+                    id="textInput"
+                    placeholder="Например: Движение — это жизнь!"
+                  />
+                </div>
+                <div class="text-controls">
+                  <div class="font-color-controls">
+                    <div class="control">
+                      <label for="textFontSelect">Шрифт текста:</label>
+                      <select id="textFontSelect">
+                        <option value="Arial">Arial</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Impact">Impact</option>
+                        <option value="Courier New">Courier New</option>
+                      </select>
+                    </div>
+
+                    <div class="control-color">
+                      <label for="textColorInput">Цвет текста: </label>
+                      <input type="color" id="textColorInput" value="#ffffff" />
+                    </div>
+                  </div>
+                  <div class="control">
+                    <label for="textSizeInput"
+                      >Размер текста:
+                      <span id="textSizeValue" class="value">24px</span></label
+                    >
+                    <input
+                      type="range"
+                      value="24"
+                      min="14"
+                      max="60"
+                      id="textSizeInput"
+                    />
+                  </div>
+
+                  <div class="control">
+                    <label for="textOpacityInput"
+                      >Прозрачность текста:
+                      <span id="textOpacityValue" class="value"
+                        >100%</span
+                      ></label
+                    >
+                    <input
+                      type="range"
+                      value="100"
+                      min="0"
+                      max="100"
+                      id="textOpacityInput"
+                    />
+                  </div>
+
+                  <div class="control">
+                    <button id="toggleTextOrientationBtn">
+                      Вертикальный текст
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="img-controls">
+                <div class="control">
+                  <label for="brightnessInput"
+                    >Яркость:
+                    <span id="brightnessValue" class="value">100%</span></label
+                  >
+                  <input
+                    type="range"
+                    value="100"
+                    min="50"
+                    max="150"
+                    id="brightnessInput"
+                  />
+                </div>
+
+                <div class="control">
+                  <label for="contrastInput"
+                    >Контраст:
+                    <span id="contrastValue" class="value">100%</span></label
+                  >
+                  <input
+                    type="range"
+                    value="100"
+                    min="50"
+                    max="150"
+                    id="contrastInput"
+                  />
+                </div>
+
+                <div class="control">
+                  <label for="blurInput"
+                    >Размытие:
+                    <span id="blurValue" class="value">0px</span></label
+                  >
+                  <input
+                    type="range"
+                    value="0"
+                    min="0"
+                    max="10"
+                    id="blurInput"
+                  />
+                </div>
+
+                <div class="control">
+                  <label for="saturationInput"
+                    >Насыщенность :
+                    <span id="saturationValue" class="value">100%</span></label
+                  >
+                  <input
+                    type="range"
+                    value="100"
+                    min="0"
+                    max="200"
+                    id="saturationInput"
+                  />
+                </div>
+
+                <div class="control">
+                  <label for="sepiaInput"
+                    >Сепия (Ретро):
+                    <span id="sepiaValue" class="value">0%</span></label
+                  >
+                  <input
+                    type="range"
+                    value="0"
+                    min="0"
+                    max="100"
+                    id="sepiaInput"
+                  />
+                </div>
+
+                <div class="control">
+                  <label for="hueInput"
+                    >Смещение цвета:
+                    <span id="hueValue" class="value">0deg</span></label
+                  >
+                  <input
+                    type="range"
+                    value="0"
+                    min="0"
+                    max="360"
+                    id="hueInput"
+                  />
+                </div>
+
+                <div class="control">
+                  <label for="invertInput"
+                    >Инверсия (Неон):
+                    <span id="invertValue" class="value">0%</span></label
+                  >
+                  <input
+                    type="range"
+                    value="0"
+                    min="0"
+                    max="100"
+                    id="invertInput"
+                  />
+                </div>
+
+                <div class="control">
+                  <label for="noirInput"
+                    >Драматичный нуар:
+                    <span id="noirValue" class="value">0%</span></label
+                  >
+                  <input
+                    type="range"
+                    value="0"
+                    min="0"
+                    max="100"
+                    id="noirInput"
+                  />
+                </div>
+
+                <div class="control">
+                  <label for="thermalInput"
+                    >Инфракрасный неон:
+                    <span id="thermalValue" class="value">0%</span></label
+                  >
+                  <input
+                    type="range"
+                    value="0"
+                    min="0"
+                    max="100"
+                    id="thermalInput"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="buttons-panel">
+              <button id="resetFiltersBtn" disabled>Сбросить всё</button>
+              <button id="downloadPosterBtn" disabled>Скачать</button>
+            </div>
+            <div class="hint">
+              Предупреждение: после нажатия Сбросить всё редактор обнулится,
+              ваше изображение будет удалено.
+            </div>
+          </div>
+        </div>
+      </main>
+      <aside>
+        <div id="calculator-card" class="card">
+          <h2>Калькулятор ИМТ</h2>
+          <p>
+            Данный калькулятор ИМТ рассчтывает индекс по стандартной шкале
+            Всемирной организации здравоохранения (ВОЗ). График ниже наглядно
+            демонстрирует, в какой диапазон попадают ваши показатели:
+          </p>
+          <img class="imt-graf" src="img/IMT.webp" />
+          <label for="heightInput">Рост, см</label>
+          <input type="number" id="heightInput" placeholder="Например, 163" />
+
+          <label for="heightInput">Вес, кг</label>
+          <input type="number" id="weightInput" placeholder="Например, 57" />
+
+          <button type="button" id="calculateButton">Рассчитать</button>
+
+          <div class="error" id="messageText"></div>
+          <div id="bmiValue" class="bmi">ИМТ: —</div>
+          <div id="bmiCategory" class="category">Категория не определена</div>
+          <div id="bmiText" class="text">
+            Введите рост и вес, чтобы увидеть результат.
+          </div>
+          <img id="bmiImage" src="img/3_3.webp" />
+          <h3>Рекомендации</h3>
+          <p id="recommendationText">
+            Здесь вы увидите несколько рекомендаций, согласно рассчитанному ИМТ.
+          </p>
+
+          <div class="sidebar-ads">
+            <h3 id="advertisement-block" class="ads-header">
+              Приглашаем посетить
+            </h3>
+            <p class="ads-subheader">
+              Локации от наших друзей, где можно хорошенько потренироваться,
+              перекусить полезной едой и просто сбросить накопившийся стресс.
+            </p>
+
+            <div class="ad-card">
+              <div class="ad-badge bg-sport">Спорт</div>
+              <div class="ad-img-box">
+                <img
+                  src="img/50.webp"
+                  alt="Фасад тренажерного зала"
+                  class="ad-img"
+                />
+              </div>
+              <div class="ad-body">
+                <h3 class="ad-name">Тренажёрка на набережной</h3>
+                <p class="ad-text">
+                  Современное железо, просторный зал и умный подход к
+                  тренировкам. Запишись на бесплатное пробное занятие!
+                </p>
+                <div class="ad-info">
+                  <span class="ad-geo">📍 ул. Набережная, д. 10</span>
+                  <a
+                    href="https://marialee3095.github.io/Fitness-site-model/"
+                    target="_blank"
+                    class="ad-btn"
+                    >На сайт ➔</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="ad-card">
+              <div class="ad-badge bg-cats">Релакс</div>
+              <div class="ad-img-box">
+                <img src="img/40.webp" alt="Фасад котокафе" class="ad-img" />
+              </div>
+              <div class="ad-body">
+                <h3 class="ad-name">Котокафе на Набережной</h3>
+                <p class="ad-text">
+                  Лучшая антистресс-терапия для тех, кто скучает. Правильное и
+                  сбалансированное меню, вкусный чай, настольные игры и 15
+                  пушистых котиков, готовых дарить вам своё мурлыканье.
+                </p>
+                <div class="ad-info">
+                  <span class="ad-geo">📍 ул. Набережная, д. 11</span>
+                  <a
+                    href="https://marialee3095.github.io/Catcafe-site-model/"
+                    target="_blank"
+                    class="ad-btn"
+                    >На сайт ➔</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <footer>
+        <p>Архитектура тела</p>
+        <div class="footer-nav">
+          <p>~</p>
+          <a href="#calculator-card">Рассчитать ИМТ</a>
+          <a href="#advices-card">ЗОЖ-советы</a>
+          <a href="#text-card">Сделать записи</a>
+          <p>~</p>
+        </div>
+        <p>Макет сайта 2026</p>
+      </footer>
+    </div>
+    <a href="#top" id="backToTop" class="back-to-top" aria-label="Наверх">↑</a>
+    <script src="script.js"></script>
+  </body>
+</html>
