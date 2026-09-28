@@ -35,6 +35,22 @@ burgerBtn.addEventListener("click", () => {
   navMobile.classList.toggle("active");
 });
 
+function closeMenu() {
+  burgerBtn.classList.remove("active");
+  navMobile.classList.remove("active");
+}
+
+const navLinks = document.querySelectorAll(".nav-mobile a");
+navLinks.forEach((link) => {
+  link.addEventListener("click", closeMenu);
+});
+
+document.addEventListener("click", (event) => {
+  if (!navMobile.contains(event.target) && !burgerBtn.contains(event.target)) {
+    closeMenu();
+  }
+});
+
 navMobile.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => {
     burgerBtn.classList.remove("active");

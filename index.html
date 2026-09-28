@@ -22,6 +22,7 @@
           <button class="theme-toggle">Переключить тему</button>
         </nav>
         <nav class="nav-mobile" id="navMobile">
+          <a href="#calculator-card">Рассчитать ИМТ</a>
           <a href="#advices-card">ЗОЖ-советы</a>
           <a href="#text-card">Сделать записи</a>
           <a href="#picture-card">Создать постер</a>
@@ -33,9 +34,16 @@
           <p>
             Интерактивный ЗОЖ-сайт - проведите время с пользой для тела и ума.
           </p>
-          <div class="imt-button">
-            <a href="#calculator-card">Рассчитать ИМТ</a>
-          </div>
+          <button
+            class="imt-button"
+            onclick="
+              document
+                .getElementById('calculator-card')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
+          >
+            Рассчитать ИМТ
+          </button>
         </div>
       </header>
 
@@ -123,6 +131,7 @@
                 <button id="undoBtn" disabled>↩</button>
                 <button id="redoBtn" disabled>↪</button>
               </div>
+              <div class="hint-undo-redo">Отменить или повторить действие</div>
 
               <div class="text-settings">
                 <h3>Добавить текст</h3>
@@ -168,7 +177,7 @@
 
                   <div class="control">
                     <label for="textOpacityInput"
-                      >Прозрачность текста:
+                      >Прозрачность:
                       <span id="textOpacityValue" class="value"
                         >100%</span
                       ></label
@@ -379,7 +388,7 @@
                 <h3 class="ad-name">Тренажёрка на набережной</h3>
                 <p class="ad-text">
                   Современное железо, просторный зал и умный подход к
-                  тренировкам. Запишись на бесплатное пробное занятие!
+                  тренировкам. Запишитесь на бесплатное пробное занятие!
                 </p>
                 <div class="ad-info">
                   <span class="ad-geo">📍 ул. Набережная, д. 10</span>
