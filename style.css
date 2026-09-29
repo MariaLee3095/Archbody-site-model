@@ -82,6 +82,9 @@ html.dark #fontFamilySelect {
 html.dark #textEditor {
   border-color: #4b8fce;
 }
+html.dark .sidebar-ads {
+  border-top: 1px solid #a0b0c05f;
+}
 html.dark .imt-button {
   background-color: #2b3240;
   color: rgb(241, 108, 60);
@@ -241,7 +244,7 @@ nav a:hover,
 
 h1 {
   margin: 30px 0 0 0;
-  font-size: clamp(38px, 5vw, 124px);
+  font-size: clamp(35px, 7vw, 124px);
   font-variant: small-caps;
   font-family:
     system-ui,
@@ -1015,8 +1018,11 @@ footer {
   .ad-text {
     font-size: 11px;
   }
+  html.dark header {
+    background-image: url(img/hero_img_dark_2.webp);
+  }
   header {
-    background-image: url(img/hero_img_dark_2.webp) !important;
+    background-image: url(img/hero_img_2.webp);
     background-position-x: -250px;
   }
   .header-content {
@@ -1030,7 +1036,8 @@ footer {
     font-size: 10px;
   }
   .nav-mobile {
-    width: 55%;
+    width: 100%;
+    border-radius: 0;
   }
   nav a,
   .theme-toggle {
