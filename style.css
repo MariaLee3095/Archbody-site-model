@@ -347,7 +347,10 @@ aside {
   color: #808097;
 }
 .input:focus + .label {
-  color: #454479;
+  color: rgba(0, 0, 139, 0.4);
+}
+html.dark .input:focus + .label {
+  color: #4b8fce;
 }
 
 .card {
