@@ -315,6 +315,41 @@ aside {
   padding-top: 20px;
   margin-top: 0;
 }
+
+.input {
+  outline: none;
+  box-sizing: border-box;
+  position: relative;
+  margin-top: 20px;
+  z-index: 1;
+}
+.label {
+  position: absolute;
+  z-index: 2;
+  left: clamp(5px 5vw 35px);
+  margin-top: -18px;
+  font-weight: lighter;
+  transform: translateY(-50%) scale(1);
+  color: #808097;
+  padding: 10px;
+  pointer-events: none;
+  transform-origin: left top;
+  transition:
+    transform 0.2s,
+    color 0.2s;
+}
+.input:focus + .label {
+  transform: translateY(-37px) translateX(5px) scale(0.75);
+  font-weight: bold;
+}
+
+.input + .label {
+  color: #808097;
+}
+.input:focus + .label {
+  color: #454479;
+}
+
 .card {
   max-width: 100%;
   max-height: min-content;

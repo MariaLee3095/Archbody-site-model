@@ -136,12 +136,13 @@
               <div class="text-settings">
                 <h3>Добавить текст</h3>
                 <div class="control">
-                  <label for="textInput">Ваша надпись:</label>
                   <input
+                    class="input"
                     type="text"
                     id="textInput"
-                    placeholder="Например: Движение — это жизнь!"
+                    placeholder=" "
                   />
+                  <label class="label" for="textInput">Ваша надпись:</label>
                 </div>
                 <div class="text-controls">
                   <div class="font-color-controls">
@@ -346,11 +347,12 @@
             демонстрирует, в какой диапазон попадают ваши показатели:
           </p>
           <img class="imt-graf" src="img/IMT.webp" />
-          <label for="heightInput">Рост, см</label>
-          <input type="number" id="heightInput" placeholder="Например, 163" />
 
-          <label for="heightInput">Вес, кг</label>
-          <input type="number" id="weightInput" placeholder="Например, 57" />
+          <input class="input" type="number" id="heightInput" placeholder=" " />
+          <label class="label" for="heightInput">Рост, см</label>
+
+          <input class="input" type="number" id="weightInput" placeholder=" " />
+          <label class="label" for="heightInput">Вес, кг</label>
 
           <button type="button" id="calculateButton">Рассчитать</button>
 
